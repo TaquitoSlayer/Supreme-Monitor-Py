@@ -28,7 +28,7 @@ def List(url, proxy):
             pids.append(final)
     return pids
 
-def get_info(pid):
+def get_info(pid, proxy):
     product_styles = {}
     products = []
     pid_price = pid.split('@')
@@ -36,7 +36,7 @@ def get_info(pid):
     price = pid_price[1]
     url = f'https://www.supremenewyork.com/shop/{pid}'
     item_url = f'https://www.supremenewyork.com/shop/{pid}.json'
-    product = r.get(item_url, headers = headers)
+    product = r.get(item_url, headers = headers, proxies={"http": proxy, "https": proxy})
     styles = product.json()['styles']
     for items in styles:
         stock = items['sizes'][0]['stock_level']

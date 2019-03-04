@@ -40,32 +40,43 @@ def check_if_posted(pid):
         post_to_discord(pid)
 
 def post_to_discord(product_pid):
-    productz, _product_styles, _item_url, url, price = products.get_info(product_pid)
-    eve_qt = 'http://remote.eve-backend.net/api/quick_task?link=' + url
-    price = int(price) / 100
-    parsed_uri = urlparse(url)
-    result = '{uri.netloc}'.format(uri=parsed_uri)
-    with open('webhook.json') as json_file:
-        json_dump = json.load(json_file)
-        for site_name in json_dump:
-            if site_name in result:
-                webhookz = json_dump[site_name]['webhook']
-                print(webhookz)
-                for webhook in webhookz:
-                    for x in productz:
-                        product = x.split('@')
-                        name = product[0]
-                        image = product[1]
-                        stock = product[2]
-                        embed = Webhook(webhook, color=13177876)
-                        embed.set_desc(f'[{name}]({url})')
-                        embed.add_field(name='Stock',value=stock)
-                        embed.add_field(name='Price',value=price)
-                        embed.add_field(name='Quick Tasks', value=f'[EVE]({eve_qt})',inline='false')
-                        embed.set_thumbnail(image)
-                        embed.set_footer(text=f'Supreme Monitor by @TaquitoSlayer', ts=True)
-                        embed.post()
+    fucked = False
+    while not fucked:
+        proxy_picked = proxyhandler.proxy()
+        try:
+            productz, _product_styles, _item_url, url, price = products.get_info(product_pid, proxy_picked)
+            fucked = True
+            eve_qt = 'http://remote.eve-backend.net/api/quick_task?link=' + url
+            price = int(price) / 100
+            parsed_uri = urlparse(url)
+            result = '{uri.netloc}'.format(uri=parsed_uri)
+            with open('webhook.json') as json_file:
+                json_dump = json.load(json_file)
+                for site_name in json_dump:
+                    if site_name in result:
+                        webhookz = json_dump[site_name]['webhook']
+                        print(webhookz)
+                        for webhook in webhookz:
+                            for x in productz:
+                                product = x.split('@')
+                                name = product[0]
+                                image = product[1]
+                                stock = product[2]
+                                embed = Webhook(webhook, color=13177876)
+                                embed.set_desc(f'[{name}]({url})')
+                                embed.add_field(name='Stock',value=stock)
+                                embed.add_field(name='Price',value=price)
+                                embed.add_field(name='Quick Tasks', value=f'[EVE]({eve_qt})',inline='false')
+                                embed.set_thumbnail(image)
+                                embed.set_footer(text=f'Supreme Monitor by @TaquitoSlayer', ts=True)
+                                embed.post()
 
+        # simplejson.errors.JSONDecodeError
+        except Exception as e:
+            logging.info(f'{url.upper()} SOMETHING WRONG - SLEEPING FOR {delay} SECONDS')
+            logging.info(f'{e}')
+            time.sleep(float(delay))
+            pass
 def monitor(url, proxy, task_num):
     try:
         initial_product_list = products.List(url, proxy)
@@ -111,52 +122,62 @@ def main(task_num, url, delay):
 
 def restock_monitor(url):
     # logging.info(f'SUPREME RESTOCK MONITOR - {url}')
-    productz, _product_styles, _item_url, full_url, price = products.get_info(url)
-    eve_qt = 'http://remote.eve-backend.net/api/quick_task?link=' + full_url
-    price = int(price) / 100
-    for x in productz:
-        product = x.split('@')
-        name = product[0]
-        image = product[1]
-        stock_initial = f'{name}@{int(product[2])}'
-        while True:
-            productz_n, _product_styles, _item_url, _url, price = products.get_info(url)
-            for y in productz_n:
-                product_n = y.split('@')
-                stock_new = f'{name}@{int(product_n[2])}' 
-                diff = list(set(stock_new) - set(stock_initial))
-                if bool(diff) == True:
-                    try:
-                        product_n = diff[0].split('@')
-                        stock = int(product_n[1])
-                    except:
-                        stock = 0
-                    if stock > 0:
-                        parsed_uri = urlparse(url)
-                        result = '{uri.netloc}'.format(uri=parsed_uri)
-                        with open('webhook.json') as json_file:
-                            json_dump = json.load(json_file)
-                            for site_name in json_dump:
-                                if site_name in result:
-                                    webhookz = json_dump[site_name]['webhook']
-                                    print(webhookz)
-                                    for webhook in webhookz:
-                                        logging.info(f'NEW STOCK UPDATE FOUND')
-                                        embed = Webhook(webhook, color=13177876)
-                                        embed.set_desc(f'[{name}]({full_url})')
-                                        embed.add_field(name='Stock',value=stock)
-                                        embed.add_field(name='Price',value=price)
-                                        embed.add_field(name='Quick Tasks', value=f'[EVE]({eve_qt})',inline='false')
-                                        embed.set_thumbnail(image)
-                                        embed.set_footer(text=f'Supreme Restock Monitor by @TaquitoSlayer', ts=True)
-                                        embed.post()
-                                        stock_initial = stock_new
-                                elif bool(diff) == False:
-                                    # logging.info(f'no changes found - {url}')
-                                    pass
-                                else:
-                                    # logging.info('Nothing new found')
-                                    pass
+    fucked = False
+    while not fucked:
+        proxy_picked = proxyhandler.proxy()
+        try:
+            productz, _product_styles, _item_url, full_url, price = products.get_info(url, proxy_picked)
+            eve_qt = 'http://remote.eve-backend.net/api/quick_task?link=' + full_url
+            price = int(price) / 100
+            for x in productz:
+                product = x.split('@')
+                name = product[0]
+                image = product[1]
+                stock_initial = f'{name}@{int(product[2])}'
+                while True:
+                    productz_n, _product_styles, _item_url, _url, price = products.get_info(url, proxy_picked)
+                    for y in productz_n:
+                        product_n = y.split('@')
+                        stock_new = f'{name}@{int(product_n[2])}' 
+                        diff = list(set(stock_new) - set(stock_initial))
+                        if bool(diff) == True:
+                            try:
+                                product_n = diff[0].split('@')
+                                stock = int(product_n[1])
+                            except:
+                                stock = 0
+                            if stock > 0:
+                                parsed_uri = urlparse(url)
+                                result = '{uri.netloc}'.format(uri=parsed_uri)
+                                with open('webhook.json') as json_file:
+                                    json_dump = json.load(json_file)
+                                    for site_name in json_dump:
+                                        if site_name in result:
+                                            webhookz = json_dump[site_name]['webhook']
+                                            print(webhookz)
+                                            for webhook in webhookz:
+                                                logging.info(f'NEW STOCK UPDATE FOUND')
+                                                embed = Webhook(webhook, color=13177876)
+                                                embed.set_desc(f'[{name}]({full_url})')
+                                                embed.add_field(name='Stock',value=stock)
+                                                embed.add_field(name='Price',value=price)
+                                                embed.add_field(name='Quick Tasks', value=f'[EVE]({eve_qt})',inline='false')
+                                                embed.set_thumbnail(image)
+                                                embed.set_footer(text=f'Supreme Restock Monitor by @TaquitoSlayer', ts=True)
+                                                embed.post()
+                                                stock_initial = stock_new
+                                        elif bool(diff) == False:
+                                            # logging.info(f'no changes found - {url}')
+                                            pass
+                                        else:
+                                            # logging.info('Nothing new found')
+                                            pass
+            fucked = True
+        except Exception as e:
+            logging.info(f'{url.upper()} SOMETHING WRONG - SLEEPING FOR {delay} SECONDS')
+            logging.info(f'{e}')
+            time.sleep(float(delay))
+            pass
 
 restock_urls = None
 
