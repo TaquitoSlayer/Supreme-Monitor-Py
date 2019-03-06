@@ -1,0 +1,181 @@
+{
+    "styles": [
+        {
+            "id": 22799,
+            "name": "Blue",
+            "currency": "USD",
+            "description": null,
+            "image_url": "//assets.supremenewyork.com/167060/sm/OF3rOmievXY.jpg",
+            "image_url_hi": "//assets.supremenewyork.com/167060/rs/OF3rOmievXY.jpg",
+            "swatch_url": "//assets.supremenewyork.com/167060/ca/OF3rOmievXY.jpg",
+            "swatch_url_hi": "//assets.supremenewyork.com/167060/rc/OF3rOmievXY.jpg",
+            "mobile_zoomed_url": "//assets.supremenewyork.com/167060/mo/OF3rOmievXY.jpg",
+            "mobile_zoomed_url_hi": "//assets.supremenewyork.com/167060/rm/OF3rOmievXY.jpg",
+            "bigger_zoomed_url": "//assets.supremenewyork.com/167060/zo/OF3rOmievXY.jpg",
+            "sizes": [
+                {
+                    "name": "Small",
+                    "id": 64213,
+                    "stock_level": 12
+                },
+                {
+                    "name": "Medium",
+                    "id": 64214,
+                    "stock_level": 0
+                },
+                {
+                    "name": "Large",
+                    "id": 64215,
+                    "stock_level": 0
+                },
+                {
+                    "name": "XLarge",
+                    "id": 64216,
+                    "stock_level": 0
+                }
+            ],
+            "additional": [
+                {
+                    "swatch_url": "//assets.supremenewyork.com/167062/ca/cfCBzLyUrA0.jpg",
+                    "swatch_url_hi": "//assets.supremenewyork.com/167062/rc/cfCBzLyUrA0.jpg",
+                    "image_url": "//assets.supremenewyork.com/167062/sm/cfCBzLyUrA0.jpg",
+                    "image_url_hi": "//assets.supremenewyork.com/167062/rs/cfCBzLyUrA0.jpg",
+                    "zoomed_url": "//assets.supremenewyork.com/167062/mo/cfCBzLyUrA0.jpg",
+                    "zoomed_url_hi": "//assets.supremenewyork.com/167062/rm/cfCBzLyUrA0.jpg",
+                    "bigger_zoomed_url": "//assets.supremenewyork.com/167062/zo/cfCBzLyUrA0.jpg"
+                },
+                {
+                    "swatch_url": "//assets.supremenewyork.com/167061/ca/YoGif7GLN6U.jpg",
+                    "swatch_url_hi": "//assets.supremenewyork.com/167061/rc/YoGif7GLN6U.jpg",
+                    "image_url": "//assets.supremenewyork.com/167061/sm/YoGif7GLN6U.jpg",
+                    "image_url_hi": "//assets.supremenewyork.com/167061/rs/YoGif7GLN6U.jpg",
+                    "zoomed_url": "//assets.supremenewyork.com/167061/mo/YoGif7GLN6U.jpg",
+                    "zoomed_url_hi": "//assets.supremenewyork.com/167061/rm/YoGif7GLN6U.jpg",
+                    "bigger_zoomed_url": "//assets.supremenewyork.com/167061/zo/YoGif7GLN6U.jpg"
+                }
+            ]
+        },
+        {
+            "id": 22800,
+            "name": "Black",
+            "currency": "USD",
+            "description": null,
+            "image_url": "//assets.supremenewyork.com/167063/sm/2JkMuN3dfZA.jpg",
+            "image_url_hi": "//assets.supremenewyork.com/167063/rs/2JkMuN3dfZA.jpg",
+            "swatch_url": "//assets.supremenewyork.com/167063/ca/2JkMuN3dfZA.jpg",
+            "swatch_url_hi": "//assets.supremenewyork.com/167063/rc/2JkMuN3dfZA.jpg",
+            "mobile_zoomed_url": "//assets.supremenewyork.com/167063/mo/2JkMuN3dfZA.jpg",
+            "mobile_zoomed_url_hi": "//assets.supremenewyork.com/167063/rm/2JkMuN3dfZA.jpg",
+            "bigger_zoomed_url": "//assets.supremenewyork.com/167063/zo/2JkMuN3dfZA.jpg",
+            "sizes": [
+                {
+                    "name": "Small",
+                    "id": 64217,
+                    "stock_level": 11111
+                },
+                {
+                    "name": "Medium",
+                    "id": 64218,
+                    "stock_level": 0
+                },
+                {
+                    "name": "Large",
+                    "id": 64219,
+                    "stock_level": 0
+                },
+                {
+                    "name": "XLarge",
+                    "id": 64220,
+                    "stock_level": 0
+                }
+            ],
+            "additional": [
+                {
+                    "swatch_url": "//assets.supremenewyork.com/170138/ca/6cIQMsdj1Xs.jpg",
+                    "swatch_url_hi": "//assets.supremenewyork.com/170138/rc/6cIQMsdj1Xs.jpg",
+                    "image_url": "//assets.supremenewyork.com/170138/sm/6cIQMsdj1Xs.jpg",
+                    "image_url_hi": "//assets.supremenewyork.com/170138/rs/6cIQMsdj1Xs.jpg",
+                    "zoomed_url": "//assets.supremenewyork.com/170138/mo/6cIQMsdj1Xs.jpg",
+                    "zoomed_url_hi": "//assets.supremenewyork.com/170138/rm/6cIQMsdj1Xs.jpg",
+                    "bigger_zoomed_url": "//assets.supremenewyork.com/170138/zo/6cIQMsdj1Xs.jpg"
+                },
+                {
+                    "swatch_url": "//assets.supremenewyork.com/167064/ca/8gq20N6JZ8s.jpg",
+                    "swatch_url_hi": "//assets.supremenewyork.com/167064/rc/8gq20N6JZ8s.jpg",
+                    "image_url": "//assets.supremenewyork.com/167064/sm/8gq20N6JZ8s.jpg",
+                    "image_url_hi": "//assets.supremenewyork.com/167064/rs/8gq20N6JZ8s.jpg",
+                    "zoomed_url": "//assets.supremenewyork.com/167064/mo/8gq20N6JZ8s.jpg",
+                    "zoomed_url_hi": "//assets.supremenewyork.com/167064/rm/8gq20N6JZ8s.jpg",
+                    "bigger_zoomed_url": "//assets.supremenewyork.com/167064/zo/8gq20N6JZ8s.jpg"
+                }
+            ]
+        },
+        {
+            "id": 22801,
+            "name": "Red",
+            "currency": "USD",
+            "description": null,
+            "image_url": "//assets.supremenewyork.com/167065/sm/6yYWzxm_K7A.jpg",
+            "image_url_hi": "//assets.supremenewyork.com/167065/rs/6yYWzxm_K7A.jpg",
+            "swatch_url": "//assets.supremenewyork.com/167065/ca/6yYWzxm_K7A.jpg",
+            "swatch_url_hi": "//assets.supremenewyork.com/167065/rc/6yYWzxm_K7A.jpg",
+            "mobile_zoomed_url": "//assets.supremenewyork.com/167065/mo/6yYWzxm_K7A.jpg",
+            "mobile_zoomed_url_hi": "//assets.supremenewyork.com/167065/rm/6yYWzxm_K7A.jpg",
+            "bigger_zoomed_url": "//assets.supremenewyork.com/167065/zo/6yYWzxm_K7A.jpg",
+            "sizes": [
+                {
+                    "name": "Small",
+                    "id": 64221,
+                    "stock_level": 7
+                },
+                {
+                    "name": "Medium",
+                    "id": 64222,
+                    "stock_level": 0
+                },
+                {
+                    "name": "Large",
+                    "id": 64223,
+                    "stock_level": 19
+                },
+                {
+                    "name": "XLarge",
+                    "id": 64224,
+                    "stock_level": 0
+                }
+            ],
+            "additional": [
+                {
+                    "swatch_url": "//assets.supremenewyork.com/167067/ca/zRC5lh0EmbI.jpg",
+                    "swatch_url_hi": "//assets.supremenewyork.com/167067/rc/zRC5lh0EmbI.jpg",
+                    "image_url": "//assets.supremenewyork.com/167067/sm/zRC5lh0EmbI.jpg",
+                    "image_url_hi": "//assets.supremenewyork.com/167067/rs/zRC5lh0EmbI.jpg",
+                    "zoomed_url": "//assets.supremenewyork.com/167067/mo/zRC5lh0EmbI.jpg",
+                    "zoomed_url_hi": "//assets.supremenewyork.com/167067/rm/zRC5lh0EmbI.jpg",
+                    "bigger_zoomed_url": "//assets.supremenewyork.com/167067/zo/zRC5lh0EmbI.jpg"
+                },
+                {
+                    "swatch_url": "//assets.supremenewyork.com/167066/ca/Yw2oZzwaP3w.jpg",
+                    "swatch_url_hi": "//assets.supremenewyork.com/167066/rc/Yw2oZzwaP3w.jpg",
+                    "image_url": "//assets.supremenewyork.com/167066/sm/Yw2oZzwaP3w.jpg",
+                    "image_url_hi": "//assets.supremenewyork.com/167066/rs/Yw2oZzwaP3w.jpg",
+                    "zoomed_url": "//assets.supremenewyork.com/167066/mo/Yw2oZzwaP3w.jpg",
+                    "zoomed_url_hi": "//assets.supremenewyork.com/167066/rm/Yw2oZzwaP3w.jpg",
+                    "bigger_zoomed_url": "//assets.supremenewyork.com/167066/zo/Yw2oZzwaP3w.jpg"
+                }
+            ]
+        }
+    ],
+    "description": "Lambskin leather with satin lining and snap front closure. Double welt hand pockets at lower front and interior chest pocket. Stripe rib collar, cuffs and hem. Two-layer leather appliqué logo on back. ",
+    "can_add_styles": false,
+    "can_buy_multiple": false,
+    "ino": "SS19J33",
+    "cod_blocked": false,
+    "canada_blocked": false,
+    "purchasable_qty": 1,
+    "new_item": false,
+    "apparel": true,
+    "handling": 0,
+    "no_free_shipping": false,
+    "can_buy_multiple_with_limit": 0
+}

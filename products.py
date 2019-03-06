@@ -1,6 +1,7 @@
 import requests
 import re
 import json
+import time
 import bs4 as bs
 
 r = requests.session()
@@ -12,7 +13,11 @@ def generate_sitelist(textfile):
         sitelist = urls.read().splitlines()
     return sitelist
 
-# loop to category, then 
+# use to test json changes detection
+# def json_test(t):
+#     with open(t) as shit:
+#         wut = shit.read()
+#     return wut
 
 def List(url, proxy):
     pids = []
@@ -35,12 +40,18 @@ def get_info(pid, proxy):
     url = f'https://www.supremenewyork.com/shop/{pid}'
     item_url = f'https://www.supremenewyork.com/shop/{pid}.json'
     product = r.get(item_url, headers = headers, proxies={"http": proxy, "https": proxy})
+    # file = 'test.json'
+    # product = json_test(file)
+    # product = json.loads(product)
     styles = product.json()['styles']
+    # styles = product['styles']
     for items in styles:
-        stock = items['sizes'][0]['stock_level']
-        product_name = items['name']
-        product_styles[product_name] = stock
-        product_image = 'https:' + items['image_url']
-        product_result = product_name + '@' + product_image + '@' + str(stock)
-        products.append(product_result)
+        sizes = items['sizes']
+        for x in sizes:
+            stock = x['stock_level']
+            product_name = items['name'] + ' - ' + x['name']
+            product_styles[product_name] = stock
+            product_image = 'https:' + items['image_url']
+            product_result = product_name + '@' + product_image + '@' + str(stock)
+            products.append(product_result)
     return products, product_styles, item_url, url, price

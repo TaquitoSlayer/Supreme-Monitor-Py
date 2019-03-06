@@ -4,9 +4,9 @@ from multiprocessing import Process
 import time
 
 
-file = '/Users/OverpricedFruit/proxies_aug23_fixed.txt'
+file = 'proxies.txt'
 proxies = proxyhandler.read_proxies(file)
-sites = products.generate_sitelist()
+sites = products.generate_sitelist('sitelist.txt')
 site = sites[0]
 
 def main(proxy):
