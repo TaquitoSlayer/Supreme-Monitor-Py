@@ -137,12 +137,14 @@ def restock_monitor(url):
             productz, _product_styles, _item_url, full_url, price = products.get_info(url, proxy_picked)
             eve_qt = 'http://remote.eve-backend.net/api/quick_task?link=' + full_url
             price = int(price) / 100
+            price = str(price)
+            print(price)
                 # product = x.split('@')
                 # name = product[0]
                 # image = product[1]
                 # stock_initial = f'{name}@{int(product[2])}'
             while True:
-                productz_n, _product_styles, item_url, _url, price = products.get_info(url, proxy_picked)
+                productz_n, _product_styles, item_url, _url, _price = products.get_info(url, proxy_picked)
                 fucked = True
                     # print('step 3')
                     # product_n = y.split('@')
@@ -173,8 +175,8 @@ def restock_monitor(url):
                                     for webhook in webhookz:
                                         logging.info(f'NEW STOCK UPDATE FOUND')
                                         client = Webhook(webhook)
+                                        item_url = item_url.replace('.json', '')
                                         embed.description = f'[{name}]({item_url})'
-                                        price = price / 100
                                         embed.add_field(name='Stock',value=stock)
                                         embed.add_field(name='Price',value=price)
                                         embed.add_field(name='Quick Tasks', value=f'[EVE]({eve_qt})',inline='false')
