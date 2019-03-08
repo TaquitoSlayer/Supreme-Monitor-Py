@@ -71,6 +71,7 @@ def post_to_discord(product_pid):
                                 embed.set_thumbnail(image)
                                 embed.set_footer(text=f'Supreme Monitor by @TaquitoSlayer')
                                 client.send(embeds=[embed])
+                                embed.fields.clear()
                                 fucked = True
         except Exception as e:
             logging.info(f'{url.upper()} SOMETHING WRONG - SLEEPING FOR {delay} SECONDS')
@@ -173,12 +174,14 @@ def restock_monitor(url):
                                         logging.info(f'NEW STOCK UPDATE FOUND')
                                         client = Webhook(webhook)
                                         embed.description = f'[{name}]({item_url})'
+                                        price = price / 100
                                         embed.add_field(name='Stock',value=stock)
                                         embed.add_field(name='Price',value=price)
                                         embed.add_field(name='Quick Tasks', value=f'[EVE]({eve_qt})',inline='false')
                                         embed.set_thumbnail(image)
                                         embed.set_footer(text=f'Supreme Restock Monitor by @TaquitoSlayer')
                                         client.send(embeds=[embed])
+                                        embed.fields.clear()
                                         productz = productz_n
                                         print('stock changed')
                 elif bool(diff) == False:
